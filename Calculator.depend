@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1600004762 source:c:\users\josip draguljic\documents\programming\c\calculator\main.c
+	<stdio.h>
+	<stdlib.h>
+
