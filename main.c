@@ -61,25 +61,25 @@ int main()
             }
         }while(1);
 
-    switch(decision)
-    {
-    case 1:
-        result = DoAddition(number1, number2);
-        break;
-    case 2:
-        result = DoSubstraction(number1, number2);
-        break;
-    case 3:
-        result = DoMultiplication(number1, number2);
-        break;
-    case 4:
-        result = DoDivision(number1, number2);
-        break;
-    }
+        switch(decision)
+        {
+            case 1:
+                result = DoAddition(number1, number2);
+                break;
+            case 2:
+                result = DoSubstraction(number1, number2);
+                break;
+            case 3:
+                result = DoMultiplication(number1, number2);
+                break;
+            case 4:
+                result = DoDivision(number1, number2);
+                break;
+        }
 
-    printf("Result is: %f\n", result);
-    system("pause");
-    }
+        printf("Result is: %f\n", result);
+        system("pause");
+        }
     return 0;
 }
 
