@@ -3,7 +3,8 @@
 	<stdio.h>
 	<stdlib.h>
 
-1618935155 source:c:\users\josip\desktop\neuer ordner\c_calculator\main.c
+1618938874 source:c:\users\josip\desktop\neuer ordner\c_calculator\main.c
 	<stdio.h>
 	<stdlib.h>
+	<string.h>
 

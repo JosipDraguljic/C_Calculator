@@ -1,15 +1,22 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
+
+#define MAX_DIGITS 30
 
 float DoAddition(float num1, float num2);
 float DoSubstraction(float num1, float num2);
 float DoMultiplication(float num1, float num2);
 float DoDivision(float num1, float num2);
+int IsValidNumber(char Arr[MAX_DIGITS]);
 
 int main()
 {
-    float number1, number2, result;
+    char num1[MAX_DIGITS] = {}, num2[MAX_DIGITS] = {};
+    float number1, number2;
+    float result;
     int decision;
+
     for(;;)
     {
         do
@@ -33,7 +40,8 @@ int main()
         do
         {
             printf("Enter 1st number: ");
-            if (scanf("%f", &number1))
+            fgets(num1, MAX_DIGITS, stdin);
+            if(IsValidNumber(num1))
             {
                 fflush(stdin);
                 break;
@@ -49,7 +57,8 @@ int main()
         do
         {
             printf("Enter 2nd number: ");
-            if (scanf("%f", &number2))
+            fgets(num2, MAX_DIGITS, stdin);
+            if(IsValidNumber(num2))
             {
                 fflush(stdin);
                 break;
@@ -60,6 +69,9 @@ int main()
                 continue;
             }
         }while(1);
+
+        number1 = atof(num1);
+        number2 = atof(num2);
 
         switch(decision)
         {
@@ -101,3 +113,35 @@ float DoDivision(float num1, float num2)
     return num1/num2;
 }
 
+int IsValidNumber(char Arr[MAX_DIGITS])
+{
+    int numbers = 0, dots = 0;
+    for(int i = 0; i< strlen(Arr); i++)
+    {
+        if(isdigit(Arr[i]))
+        {
+            numbers++;
+        }
+        else if(Arr[i]=='.')
+        {
+            dots++;
+        }
+    }
+
+    if(dots == 1)
+    {
+        if((numbers + 1) == (strlen(Arr)-1))
+        {
+            return 1;
+        }
+    }
+    else if(dots == 0)
+    {
+        if(numbers == (strlen(Arr)-1))
+        {
+            return 1;
+        }
+    }
+
+    return 0;
+}
