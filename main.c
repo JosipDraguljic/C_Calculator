@@ -24,19 +24,42 @@ int main()
             fflush(stdin);
         }while(((decision!=1&&decision!=2)&& (decision!=3 && decision!=4)) && decision!=0);
 
+        if(decision == 0)
+        {
+            break;
+        }
+        system("cls");
+
+        do
+        {
+            printf("Enter 1st number: ");
+            if (scanf("%f", &number1))
+            {
+                fflush(stdin);
+                break;
+            }
+            else
+            {
+                fflush(stdin);
+                continue;
+            }
+        }while(1);
 
 
-
-    if(decision == 0)
-    {
-        break;
-    }
-    system("cls");
-
-    printf("Enter 1st number: ");
-    scanf("%f", &number1);
-    printf("Enter 2nd number: ");
-    scanf("%f", &number2);
+        do
+        {
+            printf("Enter 2nd number: ");
+            if (scanf("%f", &number2))
+            {
+                fflush(stdin);
+                break;
+            }
+            else
+            {
+                fflush(stdin);
+                continue;
+            }
+        }while(1);
 
     switch(decision)
     {
