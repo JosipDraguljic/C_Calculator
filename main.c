@@ -12,14 +12,21 @@ int main()
     int decision;
     for(;;)
     {
-    system("cls");
-    printf("Choose an operation you wish to use(0 to end)\n");
+        do
+        {
+            system("cls");
+            printf("Choose an operation you wish to use(0 to end)\n");
+            printf("- 1 - Addition\n");
+            printf("- 2 - Substraction\n");
+            printf("- 3 - Multiplication\n");
+            printf("- 4 - Division\n");
+            scanf("%d", &decision);
+            fflush(stdin);
+        }while(((decision!=1&&decision!=2)&& (decision!=3 && decision!=4)) && decision!=0);
 
-    printf("- 1 - Addition\n");
-    printf("- 2 - Substraction\n");
-    printf("- 3 - Multiplication\n");
-    printf("- 4 - Division\n");
-    scanf("%d", &decision);
+
+
+
     if(decision == 0)
     {
         break;
